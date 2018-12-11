@@ -1,0 +1,21 @@
+/* pages/tabThree/editInfo/index.wxss */
+page {
+  background: #EBEBEB;
+}
+.block {
+  background: white;
+  min-height: 100rpx;
+  padding: 4% 20rpx 0 20rpx;
+}
+.seperator {
+  background: #EBEBEB;
+  border: 1px solid #EBEBEB;
+}
+
+input {
+  padding-left: 10%;
+}
+text {
+  padding-left: 4%;
+  
+}

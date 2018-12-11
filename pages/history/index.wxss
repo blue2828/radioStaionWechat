@@ -1,0 +1,5 @@
+/* pages/history/index.wxss */
+.time {
+  color: #00000093;
+  display: block;
+}

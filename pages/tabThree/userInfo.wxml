@@ -1,0 +1,14 @@
+<view class="block" id="imgHeader" style="height: {{blockHeight}}">
+  <text class="title" style="line-height: 200rpx;">头像</text>
+  <image src="{{imageHeader}}" style="width: 160rpx;height: 180rpx;float: right;border:2px solid #1E9FFF;border-radius: 50%;"></image>
+  <view class="seperator" style="margin-top: 4rpx;"></view>
+  <text class="title">昵称</text>
+  <text class="commonTxt">{{memberInfo.nickName}}</text>
+  <view class="seperator" style="margin-top: {{lineHeight}};"></view>
+  <text class="title">姓名</text>
+  <text class="commonTxt" style="color: #808085;">{{memberInfo.name == null || memberInfo.name == '' ? '未设置姓名' : memberInfo.name}}</text>
+  <view class="seperator"></view>
+  <view bindtap="showMore">
+    <text class="title">更多>></text>
+  </view>
+</view>

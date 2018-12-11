@@ -1,0 +1,27 @@
+  <view class="userInfo" style="background: {{fieldColor}}; height: {{userInfoHeight}}; padding-top: 1.5%;">
+    <view wx:if="{{isLogin}}" bindtap="viewUserInfo">
+      <image class="userImg" style="width: 140rpx;height: 140rpx;border:1px solid #1E9FFF;border-radius: 50%;" mode="aspectFit" src="{{imageHeader}}"></image>
+        <text id="userName">{{nickName}}</text>
+        <text id="label">{{label}}</text>
+    </view>
+    <view wx:else>
+      <image style="width: 120rpx;height: 120rpx;margin-left: 41%;" src="../images/defaultHeader.jpg"></image>
+      <text style="margin: 5rpx 30%;;display: block;font-size: 12px; color: #BCBBBB;letter-spacing: 2px;">登录使用全部功能</text>
+      <button type="warn" bindtap="doLogin" >登录</button>
+    </view>
+  </view>
+
+  <view id="listenHistory" bindtap="listenHistory" style="margin-top: 10%;">
+    <image class="imgIcon" src="{{blockImg.listen}}"></image>
+   <text class="imgTxt">收听历史<text class="loginTip" wx:if="{{!isLogin}}">未登录</text></text>
+  </view>
+
+  <view id="demandHistory" bindtap="demandHistory" style="display: block;">
+    <image class="imgIcon" src="{{blockImg.history}}"></image>
+    <text class="imgTxt">点播历史<text class="loginTip" wx:if="{{!isLogin}}">未登录</text></text>
+  </view>
+
+  <view id="setting" style="display: block;margin-top: 30%;" bindtap='editInfo'>
+    <image class="imgIcon" src="{{blockImg.setting}}"></image>
+    <text class="imgTxt">修改个人资料<text class="loginTip" wx:if="{{!isLogin}}">未登录</text></text>
+  </view>

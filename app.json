@@ -1,0 +1,48 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/history/index",
+    "pages/history/demand/index",
+    "pages/play/index",
+    "pages/tabTwo/index",
+    "pages/tabThree/index",
+    "pages/tabThree/userInfo",
+    "pages/tabThree/editInfo/index",
+    "pages/tabThree/more/index",
+    "pages/history/demand/play"
+  ],
+  "tabBar": {
+    "selectedColor": "#1296db",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "主页",
+      "iconPath": "pages/images/home.png",
+      "selectedIconPath": "pages/images/home_selected.png"
+    },
+    {
+      "pagePath": "pages/tabTwo/index",
+      "text": "列表",
+      "iconPath": "pages/images/list view.png",
+      "selectedIconPath": "pages/images/list view_selected.png"
+    },
+    {
+      "pagePath": "pages/play/index",
+      "text": "播放",
+      "iconPath": "pages/images/playBtn.png",
+      "selectedIconPath": "pages/images/playBtn.png"
+    },
+    {
+      "pagePath": "pages/tabThree/index",
+      "text": "个人",
+      "iconPath": "pages/images/person.png",
+      "selectedIconPath": "pages/images/person_selected.png"
+    }]
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "学院广播台",
+    "navigationBarTextStyle":"black"
+  }
+}

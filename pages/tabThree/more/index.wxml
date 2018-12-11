@@ -1,0 +1,14 @@
+<view class="block" style="margin-top: 40rpx;">
+  <text class='title'>性别</text>
+  <text class='content' style='float: right; margin-right: 20rpx;'>{{userInfo.gender}}  </text>
+</view>
+<view style=" border: 1px solid #BCBBBB;"></view>
+<view class="block">
+  <text class='title'>生日</text>
+  <text class='content' style='float: right; margin-right: 20rpx;'>{{userInfo.birthday}}  </text>
+</view>
+<view style=" border: 1px solid #BCBBBB;"></view>
+<view class="block">
+  <text class='title'>个性签名</text>
+   <text class='content' style='float: right; margin-right: 20rpx;'>{{userInfo.label}} </text>
+</view>

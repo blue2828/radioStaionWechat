@@ -1,0 +1,4 @@
+<view class="block" wx:key="{{index}}" wx:for="{{audioInfo}}" >
+  <audio poster="" name="学院广播电台" author="{{item.memberId}}" src="{{srcHeader + item.id}}" id="myAudio" controls loop></audio>
+  <text class="time">{{item.listenTime}}</text>
+</view>

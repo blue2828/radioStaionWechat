@@ -1,0 +1,15 @@
+page {
+  background: #EBEBEB;
+}
+.block {
+  background: white;
+  height: 80rpx;
+  padding-top: 35rpx;
+}
+.title {
+  margin-left: 20rpx;
+  float: left;
+}
+.content {
+  color: #808085;
+}
