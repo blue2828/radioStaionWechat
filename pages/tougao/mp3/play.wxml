@@ -1,0 +1,18 @@
+<scroll-view scroll-y="true" style="height: 80vh;">
+  <view>
+    <text>
+      {{info.lyrics == '' ? '暂无歌曲' : info.lyrics}}
+    </text>
+  </view>
+</scroll-view>
+
+<audio
+  poster="{{info.img}}"
+  name="{{info.audio_name}}"
+  author="{{info.author_name}}"
+  src="{{info.play_url}}"
+  id="myAudio"
+  controls
+  loop
+></audio>
+<image id="bgImg" src="{{info.img}}" mode="aspectFit"></image>

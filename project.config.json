@@ -11,7 +11,7 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.0.4",
+	"libVersion": "2.4.0",
 	"appid": "wx20a96a20afe5cefb",
 	"projectname": "wechat%20project",
 	"debugOptions": {
@@ -36,18 +36,24 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 2,
 			"list": [
 				{
-					"id": -1,
+					"id": 0,
 					"name": "test",
-					"pathName": "pages/history/demand/index",
+					"pathName": "pages/chat/index",
 					"query": ""
 				},
 				{
 					"id": 1,
 					"name": "play",
-					"pathName": "pages/history/demand/play",
+					"pathName": "pages/tougao/mp3/play",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "toMe",
+					"pathName": "pages/my/sendtome/index",
 					"query": ""
 				}
 			]

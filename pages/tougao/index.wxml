@@ -1,0 +1,50 @@
+<form bindsubmit='onSubmit' bindreset="onReset">
+  <scroll-view scroll-y="true" enable-back-to-top="true" style="height: 800rpx;">
+    <view class="block sendTo" style="margin-top: 20rpx;">
+      <input type="text" name="toSb" placeholder-style="color: #c2c2c2;" placeholder="赠送给谁（选填）" maxlength="30" style="font-size: 44rpx;padding-top: 24rpx;" bindinput="inputChange"></input>
+      <text bindtap="textTap" style="color: #c2c2c2;margin-left: 636rpx;">{{dataLength}}/30</text>
+    </view>
+    <view class="block email" style="margin-top: 20rpx; min-height: 90rpx;padding-top: 20rpx;">
+      <input type="text" name="email" placeholder-style="color: #c2c2c2;" placeholder="被赠送人邮箱" maxlength="60" style="font-size: 44rpx;" ></input>
+    </view>
+    <radio-group class="radio-group" bindchange="radioChange" style="margin: 20rpx 0 20rpx 199rpx;">
+    <label class="radio" wx:key="{{item.id}}" wx:for="{{items}}">
+      <radio value="{{item.name}}" style="margin-left: 30rpx;" name="type" checked='{{item.checked}}'>{{item.value}}</radio>
+    </label>
+    </radio-group>
+    <view class="block songField" wx:if="{{showType == 'song'}}" style="padding-top: 20rpx;min-height: 120rpx;">
+      <input style="float: left;margin-left: 20rpx;border: 1px solid #c2c2c2;width: 520rpx;height: 100rpx;font-size: 44rpx;" name="play_url" bindinput='searchInputChange' value="{{searchInputVal}}" type="text" placeholder='搜索酷狗' placeholder-style="color: #c2c2c2;" ></input>
+      <button bindtap="doSearch" type="primary" style="display: inline;float: right;height: 100rpx;">
+        <icon type="search" size="16" ></icon>搜索
+      </button>
+    </view>
+    <view wx:if="{{selectedAudio.audio_name != undefinded}}" class="block" style="margin-top: 20rpx; min-height: 90rpx;padding-top: 20rpx;">
+      <text style="color: black;padding-left: 20rpx;">已选酷狗歌曲：{{selectedAudio.audio_name}}
+      </text>
+    </view>
+    <view class="block songField" wx:if="{{showType == 'song'}}" style="margin-top: 20rpx; min-height: 90rpx;padding-top: 20rpx;">
+      <input type="text" name="musicName" placeholder-style="color: #c2c2c2;" placeholder="歌曲名" 
+        style="font-size: 44rpx;" >
+      </input>
+    </view>
+    <view bindtap="showWebview" class="block songField" style="margin-top: 20rpx;">
+    <image mode="aspectFit" src="{{imgSrc}}" style="margin: 20rpx 0 0 305rpx;width: 128rpx; height: 128rpx;"></image>
+    <view class="block" style="text-align: center;margin-top: 20rpx;word-wrap: break-word;">
+    上传{{showType == 'song' ? '歌曲' : 'pdf或者txt'}}文件{{showType == 'song' ? '（可选，以备主播找不到资源时使用播放)' : ''}}<br/>
+      {{uploadFieldText.indexOf('undefinded') > -1 ? '' : uploadFieldText}}
+    </view>
+    </view>
+    <view class="block" style="margin-top: 40rpx;margin-bottom: 20rpx;border-bottom: 1px solid; border-bottom-color: #d2d2d2;">
+      <input name="demandDesc" bindinput="descInput" type="text" placeholder='编写赠词' style="padding-left: 20rpx;"></input>
+      <text style="display: block;word-wrap : break-word ;">{{desc}}</text>
+      <text style="color: #c2c2c2;margin-left: 600rpx;">{{descLength}}/200</text>
+    </view>
+    <view class="block wechatField" style="margin-top: 20rpx; min-height: 90rpx;padding-top: 20rpx;">
+      <input type="text" name="wechatNo" placeholder-style="color: #c2c2c2;" placeholder="对方的微信号" 
+        style="font-size: 44rpx;" >
+      </input>
+    </view>
+  </scroll-view>
+  <button style="margin-top: 4rpx;" type="warn" form-type="submit">投稿</button>
+  <button style="margin-top: 20rpx;" form-type="reset" >清空</button>
+</form>

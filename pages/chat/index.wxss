@@ -1,0 +1,42 @@
+page {
+  background: #EBEBEB;
+}
+#bgImg {
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.4;
+}
+.imgHeader {
+  border-radius: 50%;
+}
+.chatField {
+  margin-top: 80rpx;
+  min-height: 100rpx;
+  min-width: 100rpx;
+  max-width: 70vw;
+  background: #1E9FFF;
+  margin-left: 100rpx;
+  border-radius: 20rpx;
+  word-wrap: break-word;
+  padding-left: 20rpx;
+  line-height: 100rpx;
+  opacity: 0.6;
+}
+#inputChat {
+  position: fixed;
+  top: 87.8%;
+  z-index: 1000;
+}
+.inputContent {
+  border: 1px solid white;
+  background: white;
+  height: 120rpx;
+  opacity: 0.6;
+  width: 80vw;
+  float: left;
+  border-radius: 18rpx;
+}

@@ -1,0 +1,18 @@
+/* pages/tougao/mp3/play.wxss */
+audio {
+  position: fixed;
+  top: 86.6vh;
+}
+#bgImg {
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.4;
+}
+page {
+  padding: 0;
+  margin: 0;
+}

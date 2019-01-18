@@ -1,1 +1,25 @@
-/* pages/play/index.wxss */
+
+#mainAudio {
+ position: fixed;
+ z-index: 10000;
+ top: 900rpx;
+
+}
+#bgImg {
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.4;
+}
+.time {
+  color: #00000093;
+  display: block;
+  height: 100rpx;
+  background: white;
+  width: 94.4%;
+  opacity: 0.6;
+  line-height: 2.5rem;
+}

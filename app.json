@@ -1,39 +1,46 @@
 {
   "pages":[
-    "pages/index/index",
+    "pages/play/index",
+    "pages/chat/index",
     "pages/logs/logs",
     "pages/history/index",
     "pages/history/demand/index",
-    "pages/play/index",
-    "pages/tabTwo/index",
-    "pages/tabThree/index",
-    "pages/tabThree/userInfo",
-    "pages/tabThree/editInfo/index",
-    "pages/tabThree/more/index",
-    "pages/history/demand/play"
-  ],
+    "pages/history/demand/preview",
+    "pages/history/demand/webview",
+    "pages/tougao/index",
+    "pages/tougao/webview",
+    "pages/tougao/mp3/mp3",
+    "pages/tougao/mp3/play",
+    "pages/my/index",
+    "pages/my/userInfo",
+    "pages/my/editInfo/index",
+    "pages/my/more/index",
+    "pages/my/sendtome/index",
+    "pages/my/sendtome/previewtext" 
+    ],
   "tabBar": {
     "selectedColor": "#1296db",
-    "list": [{
-      "pagePath": "pages/index/index",
-      "text": "主页",
-      "iconPath": "pages/images/home.png",
-      "selectedIconPath": "pages/images/home_selected.png"
-    },
+    "list": [
+      {
+        "pagePath": "pages/play/index",
+        "text": "电台",
+        "iconPath": "pages/images/playBtn.png",
+        "selectedIconPath": "pages/images/playBtn.png"
+      },
     {
-      "pagePath": "pages/tabTwo/index",
-      "text": "列表",
+      "pagePath": "pages/tougao/index",
+      "text": "投稿",
       "iconPath": "pages/images/list view.png",
       "selectedIconPath": "pages/images/list view_selected.png"
     },
     {
-      "pagePath": "pages/play/index",
-      "text": "播放",
-      "iconPath": "pages/images/playBtn.png",
-      "selectedIconPath": "pages/images/playBtn.png"
+      "pagePath": "pages/chat/index",
+      "text": "联系",
+      "iconPath": "pages/images/message.png",
+      "selectedIconPath": "pages/images/message_selected.png"
     },
     {
-      "pagePath": "pages/tabThree/index",
+      "pagePath": "pages/my/index",
       "text": "个人",
       "iconPath": "pages/images/person.png",
       "selectedIconPath": "pages/images/person_selected.png"
@@ -41,8 +48,8 @@
   },
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#1E9FFF",
     "navigationBarTitleText": "学院广播台",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"white"
   }
 }

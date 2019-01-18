@@ -1,0 +1,10 @@
+/* pages/tabTwo/index.wxss */
+page {
+  background: #EBEBEB;
+}
+.block {
+  background: white;
+}
+input {
+  padding-left: 20rpx;
+}

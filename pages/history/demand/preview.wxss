@@ -1,0 +1,9 @@
+page {
+  background: #EBEBEB;
+}
+.block {
+  background: white;margin-top: 20rpx; min-height: 90rpx;padding-top: 20rpx;
+}
+.text {
+  color: black;padding-left: 20rpx;
+}

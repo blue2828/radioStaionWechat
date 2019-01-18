@@ -1,0 +1,25 @@
+<view style="text-align: center;margin-top: 50%;" wx:if="{{list.length == 0}}">无记录</view>
+<view wx:key="{{index}}" wx:for="{{list}}" style="background: white;margin-top: 40rpx;">
+  <text style="padding-top: 20rpx;">谁赠送给我：{{item.userName}}</text>
+  <text>广播录音：{{item.r_storeAddr == '' ? '无' : ''}}</text>
+  <audio wx:if="{{item.r_storeAddr != ''}}" style="margin: 20rpx 0 0 20rpx;" src="{{item.r_storeAddr}}"
+    author="{{item.zhubo}}" name="{{item.name}}" id="myAudio" controls >
+  </audio>
+  <view bindtap='preview' data-storeaddr="{{item.storeAddr}}" data-playurl="{{item.play_url}}"
+     data-filetype="{{item.fileType}}" data-demandid="{{item.d_id}}" data-img="{{item.img}}"
+     data-fileid="{{item.file_id}}"
+     >
+    <text style="float: left;">{{item.fileType}}源文件(触摸预览)：</text>
+    <image  mode="aspectFit" src="{{item.img}}" style="width: 128rpx;height: 128rpx;"></image>
+  </view>
+   <audio wx:if="{{item.doShow}}" style="margin: 20rpx 0 0 20rpx;" src="{{item.storeAddr}}"
+    name="{{item.musicName}}" id="myAudio2" controls >
+  </audio>
+  <image data-filetype="{{item.fileType}}" data-demandid="{{item.d_id}}" bindtap="pullup" mode="aspectFit" wx:if="{{item.doShow}}" style="margin-left: 46vw;width: 64rpx;height: 64rpx;" src="../../images/pullup.png"></image>
+  <text data-filetype="{{item.fileType}}" data-demandid="{{item.d_id}}" bindtap="pullup" wx:if="{{item.doShow}}" style="text-align: center;">收起</text>
+  <view>
+    <text style="padding-bottom: 40rpx;z-index: -1;">
+    赠词：{{item.demandDesc == '' || item.demandDesc == null ? '无' : item.demandDesc}}
+    </text>
+  </view>
+</view>

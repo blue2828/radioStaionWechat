@@ -1,0 +1,43 @@
+page {
+  background-color:#EBEBEB;
+}
+.userInfo, #demandHistory, #listenHistory, #setting, #sendToMe {
+  margin-top: 20px;
+  width: 100%;
+  height: 160rpx;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 2.5% 3%; 
+}
+
+#demandHistory, #listenHistory, #setting, #sendToMe  {
+  height: 100rpx;
+}
+.userImg {
+  float: left;
+}
+#userName, #label{
+  display: block;
+  margin-left: 30%;
+  line-height: 1.8em;
+}
+#label {
+  color: #BCBBBB;
+  font-size: 14px;
+}
+#listenHistory, #demandHistory {
+  height: inherit / 2;
+}
+.imgIcon {
+  width: 60rpx;
+  height: 60rpx;
+  float: left;
+}
+.imgTxt {
+  margin-left: 5%;
+}
+.loginTip {
+  float: right;
+  font-size: 12px;
+  color: #BCBBBB;
+}

@@ -1,4 +1,21 @@
-<view class="block" wx:key="{{index}}" wx:for="{{audioInfo}}" >
-  <audio poster="" name="学院广播电台" author="{{item.memberId}}" src="{{srcHeader + item.id}}" id="myAudio" controls loop></audio>
-  <text class="time">{{item.listenTime}}</text>
+<view wx:if="{{Object.keys(audioInfo).length == 0 || audioInfo.length == 0}}" style="text-align: center;margin-top: 460rpx;">
+  <text>暂无收听记录</text>
 </view>
+  <view wx:if="{{Object.keys(audioInfo).length >= 0 || audioInfo.length >= 0}}">
+  <image style="width: 16px;height: 16px;margin-left: 40rpx;" mode='aspectFit' src="../images/tips.png"></image>
+  <text class="time" style="display: inline;margin-left: 20rpx;">tips：触摸条目长按可以删除记录</text>
+  <button wx:if="{{showBtns && audioInfo.length != 0}}" size='mini' style="margin-left: 20rpx;" type="warn" bindtap="delList">删除</button>
+  <button wx:if="{{showBtns && audioInfo.length != 0}}" type="primary" size='mini' style="float: right;margin-right: 20rpx;" data-btnname="{{changeSelectV}}" bindtap='changeSelectV'>
+    {{changeSelectV}}
+  </button>
+  <button style='float: right;margin-right: 20rpx;' wx:if="{{showBtns && audioInfo.length != 0}}" size="mini" bindtap="cancelOp">取消操作</button>
+  </view>
+  <checkbox-group class="radio-group" bindchange="checkChange" >
+     <label wx:key="{{index}}" wx:for="{{audioInfo}}" bindlongpress="doLongPress" class="radio" style="display: block;">
+    <checkbox style="margin-top: 50rpx;float: left;" wx:if="{{showCheck}}" value="{{item.id}}" checked="{{item.checked}}" />
+    <audio style="margin-right: 100rpx;width: 70vw;" data-index="{{index}}" data-info="{{item}}" poster="" name="学院广播电台" author="{{item.memberId}}" src="{{item.targetFile}}" id="myAudio" controls />
+     
+    <text class="time">{{item.listenTime}}</text>
+    <text class="time">来源：{{item.listenType}}</text>
+ </label>
+</checkbox-group>

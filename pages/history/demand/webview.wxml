@@ -1,0 +1,2 @@
+<!--pages/history/demand/webview.wxml-->
+<web-view src="{{webviewUrl}}"></web-view>

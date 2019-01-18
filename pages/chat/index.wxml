@@ -1,0 +1,12 @@
+  <scroll-view scroll-y="true" style="height: 87vh;" bindlongpress="confirmClearChat">
+    <view wx:key="{{index}}" wx:for="{{items}}">
+      <image mode='aspectFit' class="imgHeader" style="float: {{item.isWx ? 'right' : 'left'}};width: 40px;height: 40px" src="{{item.isWx ? selfInfo.imageHeaderAddr : anotherObjHeader}}"></image>
+      <view class="chatField">{{item.chatContent}}</view>
+    </view>
+  </scroll-view>
+  <view id="inputChat">
+    <textarea bindinput="inputChange" class="inputContent" fixed="true" auto-focus="true" placeholder="说下你想说的话" />
+     <button bindtap="doSend" style="margin-top: 10rpx;height: 120rpx;line-height: 120rpx;" size="mini" type="warn">发送</button>
+   </view>
+  
+<image id="bgImg" src="../images/musicBg.jpg" mode="aspectFit"></image>

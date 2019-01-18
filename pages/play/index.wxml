@@ -1,6 +1,17 @@
-<audio
-  src="录音_2018-12-12_1_11_55.amr"
-  id="myAudio"
-  controls
-  loop
-></audio>
+<view wx:if="{{recordList.length != 0}}">
+    <text style="opacity: 0.6;color: #00000093;">历史记录</text>
+  </view>
+<view wx:if="{{recordList.length == 0}}" style="text-align: center;margin-top: 460rpx;">
+  <text>暂无电台历史记录</text>
+</view>
+    <scroll-view scroll-y="true" style="height: 76vh;">
+      <view wx:key="{{index}}" wx:for="{{recordList}}">
+      <audio style="opacity: 0.6;" bindplay='tapRecord' data-selectedinfo="{{item}}" src="{{item.storeAddr}}" poster="../images/poster.jpg" author="{{item.userName}}" name="{{item.s_name}}" id="myAudio" controls ></audio>
+      <text class="time" class="time">产生时间：{{item.createTime}}</text>
+      </view>
+  </scroll-view>
+
+<view id="mainAudio">
+  <audio bindplay="tapAudio" data-selectedinfo="{{castInfo}}" src="{{source}}" poster="../images/poster.jpg" author="{{author}}" name="{{name}}" id="myAudio" controls ></audio>
+</view>
+<image id="bgImg" src="{{bgImg}}" mode="aspectFit"></image>

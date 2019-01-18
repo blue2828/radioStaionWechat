@@ -1,0 +1,15 @@
+.block {
+  min-height: 140rpx;
+  margin-top: 20rpx;
+  border-bottom: 1px solid ;
+  border-bottom-color: #d2d2d2;
+}
+.audio_name {
+  color: #1E9FFF;
+  font-size: 40rpx;
+  
+}
+.author_name {
+  color: #c2c2c2;
+  font-size: 30rpx;
+}

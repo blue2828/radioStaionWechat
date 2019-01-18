@@ -2,4 +2,5 @@
 .time {
   color: #00000093;
   display: block;
+  text-align: center;
 }

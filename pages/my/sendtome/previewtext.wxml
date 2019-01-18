@@ -1,0 +1,2 @@
+<!--pages/my/sendtome/previewtext.wxml-->
+<web-view src="{{webviewUrl}}"></web-view>

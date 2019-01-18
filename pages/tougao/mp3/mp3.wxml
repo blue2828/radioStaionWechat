@@ -1,0 +1,8 @@
+<view wx:for="{{songs}}" wx:key="{{item.index}}">
+  <view class="block" data-info="{{item}}" bindtap="toPlay" bindlongpress="onLongPress">
+    <image src="{{item.img}}" style="height: 140rpx;width: 140rpx;float: left;margin: 0 30rpx 4rpx 4rpx;"></image>
+    <view  class="audio_name">{{item.audio_name}}</view>
+    <view style="margin: 20rpx 0 20rpx 0;" class="author_name">{{item.author_name}}</view>
+  </view>
+</view>
+

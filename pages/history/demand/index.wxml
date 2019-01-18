@@ -1,13 +1,9 @@
-<view class="page-body">
-  <view class="page-section tc">
-    <live-pusher id="pusher" url="rtmp://38384.livepush.myqcloud.com/live/ ddf4e07b74?bizid=38384&txSecret=c46b33b23d54a94d8565cc404c3e73d5&txTime=5C0E8D7F" mode="RTC" autopush bindstatechange="statechange" />
-
-    <view class="btn-area">
-      <button bindtap="bindStart" class="page-body-button" type="primary">播放推流</button>
-      <button bindtap="bindPause" class="page-body-button" type="primary">暂停推流</button>
-      <button bindtap="bindStop" class="page-body-button" type="primary">停止推流</button>
-      <button bindtap="bindResume" class="page-body-button" type="primary">恢复推流</button>
-      <button bindtap="bindSwitchCamera" class="page-body-button" type="primary">切换前后摄像头</button>
-    </view>
+<view style="text-align: center;margin-top: 50%;" wx:if="{{demandList.length == 0}}">无点播记录</view>
+<view  wx:key="{{index}}" wx:for="{{demandList}}" >
+  <view data-imgsrc="{{item.typeImg}}"  bindtap="previewDemand" data-info="{{item}}" class="block" style="min-height: 180rpx;margin-top: 20rpx;width: 100%;">
+    <image src="{{item.typeImg}}" style="float: left;margin: 20rpx 10rpx 20rpx 10rpx;width: 140rpx;height: 140rpx;" mode="aspectFit"></image>
+    <text style="padding-top: 20rpx;" id="toSb">赠送给：{{item.toSb == '' || item.toSb == null ? '无赠送人' : item.toSb}}</text>
+    <text style="font-size: 14px;margin-top: 10rpx;" id="state">状态：{{item.state}}</text>
+    <text style="font-size: 14px;margin-top: 10rpx;" id="time">点播时间：{{item.demandTime}}</text>
   </view>
 </view>

@@ -1,0 +1,20 @@
+<view class="block" >
+  <text class="text" >您赠送的对象是：{{prewData.toSb == '' ? '无' : prewData.toSb}}</text>
+</view>
+<view class="block">
+  <text class="text">您赠送的对象的邮箱是：{{prewData.email == '' ? '无' : prewData.email}}</text>
+</view>
+<view wx:if="{{prewData.type == '歌曲'}}" class="block" >
+  <text class="text">您点的歌：</text>
+  <audio name="{{prewData.musicName}}" src="{{doplay_url}}" id="myAudio" controls loop></audio>
+</view>
+<view bindtap="showWebview"  wx:if="{{prewData.type == '文章'}}" class="block" >
+  <text style="display: block;">您上传的文章(触摸预览)：</text>
+    <image data-filetype="{{}}" data-fileid="{{prewData.fileEntityId}}" bindtap="prewText" mode="aspectFit" src="{{imgSrc}}" style="margin: 20rpx 0 0 305rpx;width: 128rpx; height: 128rpx;"></image>
+</view>
+<view class="block">
+  <text class="text">赠词：{{prewData.demandDesc == '' ? '无' : prewData.demandDesc}}</text>
+</view>
+<view class="block">
+  <text class="text">点播时间：{{prewData.demandTime == '' ? '无' : prewData.demandTime}}</text>
+</view>

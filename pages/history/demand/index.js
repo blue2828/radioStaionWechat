@@ -1,58 +1,123 @@
+// pages/history/index.js
+var util = require('../../../utils/util.js');
 Page({
-  onReady(res) {
-    this.ctx = wx.createLivePusherContext('pusher')
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    demandList: []
   },
-  statechange(e) {
-    console.log('live-pusher code:', e.detail.code)
+
+  previewDemand: function (e) {
+    let info = e.currentTarget.dataset.info == undefined || e.currentTarget.dataset.info == null || e.currentTarget.dataset.info.length <= 0 ? e.target.dataset.info : e.currentTarget.dataset.info;
+    let imgsrc = e.currentTarget.dataset.imgsrc == undefined || e.currentTarget.dataset.imgsrc == null || e.currentTarget.dataset.imgsrc.length <= 0 ? e.target.dataset.imgsrc : e.currentTarget.dataset.imgsrc;
+    var url = 'preview?imgsrc=' + imgsrc  + '&info=' + JSON.stringify(info);
+    wx.navigateTo({
+      url: url
+    });
+    
   },
-  bindStart() {
-    this.ctx.start({
-      success: res => {
-        console.log('start success')
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    var _self = this;
+   
+
+
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+    
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    var that = this;
+    wx.request({
+      url: util.httpUrlAndPort() + "/getSelfDemand",
+      header: {"Cookie" : wx.getStorageSync('cookie_id')},
+      dataType: 'json',
+      success: function (res) {
+        let list = res.data.demandList;
+        
+        list.forEach((value, index) => {
+          switch (value.type) {
+            case '文章' :
+              var lastLetter = value.storeAddr.substring(value.storeAddr.lastIndexOf('.') + 1);
+              switch (lastLetter) {
+                case 'pdf' :
+                  value['typeImg'] = '../../images/file-pdf.png';
+                  break;
+                case 'txt' :
+                  value['typeImg'] = '../../images/file-text.png';
+                  break;
+              }
+              break;
+            default:
+              value['typeImg'] = '../../images/customerservice.png';
+          }
+        });
+        list.length > 0 ?
+        that.setData({
+          demandList: res.data.demandList
+        }) :
+        wx.showToast({
+          title: '暂无点播历史',
+          icon: 'none'
+        });
+
       },
-      fail: res => {
-        console.log('start fail')
+      fail: function (res) {
+        wx.showToast({
+          title: '服务器请求失败',
+          icon: 'none'
+        });
       }
     })
   },
-  bindPause() {
-    this.ctx.pause({
-      success: res => {
-        console.log('pause success')
-      },
-      fail: res => {
-        console.log('pause fail')
-      }
-    })
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
   },
-  bindStop() {
-    this.ctx.stop({
-      success: res => {
-        console.log('stop success')
-      },
-      fail: res => {
-        console.log('stop fail')
-      }
-    })
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
   },
-  bindResume() {
-    this.ctx.resume({
-      success: res => {
-        console.log('resume success')
-      },
-      fail: res => {
-        console.log('resume fail')
-      }
-    })
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
   },
-  bindSwitchCamera() {
-    this.ctx.switchCamera({
-      success: res => {
-        console.log('switchCamera success')
-      },
-      fail: res => {
-        console.log('switchCamera fail')
-      }
-    })
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
   }
 })
